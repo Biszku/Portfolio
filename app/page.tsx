@@ -1,9 +1,8 @@
+import LandingPage from "@/src/components/LandingPage/LandingPage";
+import Link from "next/link";
+
 const Home = () => {
-  return (
-    <main>
-      <h1>Hello World!</h1>
-    </main>
-  );
+  return <LandingPage />;
 };
 
 export default Home;
