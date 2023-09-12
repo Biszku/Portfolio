@@ -1,7 +1,7 @@
 const LandingPage = () => {
   return (
     <main>
-      <p>fsafas</p>
+      <p>Hello World!</p>
     </main>
   );
 };
