@@ -1,5 +1,4 @@
-import LandingPage from "@/src/components/LandingPage/LandingPage";
-import Link from "next/link";
+import LandingPage from "../src/components/LandingPage/LandingPage";
 
 const Home = () => {
   return <LandingPage />;
