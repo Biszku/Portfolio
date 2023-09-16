@@ -11,13 +11,12 @@ const ScrollToTop = ({ rocketVisibility }: { rocketVisibility: boolean }) => {
           initial={{ opacity: 0, y: 400 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -400 }}
+          transition={{ type: "spring", duration: 1 }}
           whileHover={{ scale: 0.9 }}
           className={styles.container}
+          onClick={() => ScrollingToElement(-1)}
         >
-          <BsFillRocketFill
-            className={styles.container_rocket}
-            onClick={() => ScrollingToElement(-1)}
-          />
+          <BsFillRocketFill className={styles.container_rocket} />
         </motion.div>
       )}
     </AnimatePresence>
