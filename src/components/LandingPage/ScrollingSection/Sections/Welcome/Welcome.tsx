@@ -2,6 +2,7 @@ import { MotionValue, motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import styles from "./Welcome.module.scss";
 import Image from "next/image";
+import ScrollingToElement from "@/src/utils/scrolling";
 
 const Welcome = ({
   scrollProgress,
@@ -23,13 +24,13 @@ const Welcome = ({
     );
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight * 7;
+      const windowHeight = window.innerHeight * 8;
       const scrollProgress = scrollY / windowHeight;
 
-      if (scrollProgress >= 0.25) {
-        setIsDisplayed(false);
-      } else {
+      if (scrollProgress < 0.25) {
         setIsDisplayed(true);
+      } else {
+        setIsDisplayed(false);
       }
     };
 
@@ -63,9 +64,9 @@ const Welcome = ({
 
           {textElementVisibility && (
             <motion.article
-              initial={{ opacity: 0, x: 400 }}
+              initial={{ opacity: 0, x: 600 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ type: "tween" }}
+              transition={{ type: "tween", duration: 0.3 }}
               className={styles.text_Content}
             >
               <motion.header layout className={styles.text_Content_HeaderBox}>
@@ -78,7 +79,17 @@ const Welcome = ({
                   transition={{ type: "spring", duration: 1, stiffness: 50 }}
                   initial={{ opacity: 0, x: 400 }}
                   animate={{ opacity: 1, x: 0 }}
+                  className={styles.text_Content_introduction}
                 >
+                  <div
+                    className={styles.text_Content_introduction_text_content}
+                  >
+                    <p>
+                      {`I'm glad you visited my website. My name is Daniel and I
+                    have been learning front end programming for a year.`}
+                    </p>
+                    <p> Click on the links below to learn more about me</p>
+                  </div>
                   <ul className={styles.navigationBox}>
                     {["About me", "Projects", "Skills", "Contact"].map(
                       (el, index) => (
@@ -88,8 +99,15 @@ const Welcome = ({
                             fontSize: "3rem",
                           }}
                           className={styles.navigationBox_item}
+                          transition={{ type: "spring" }}
+                          whileHover={{
+                            scale: 1.1,
+                            backgroundImage:
+                              "linear-gradient(to right bottom,rgb(17, 17, 131),rgb(121, 14, 14))",
+                          }}
+                          onClick={() => ScrollingToElement(index)}
                         >
-                          {el}
+                          <span>{el}</span>
                         </motion.li>
                       )
                     )}
