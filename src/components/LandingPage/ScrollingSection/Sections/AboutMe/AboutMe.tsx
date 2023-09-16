@@ -1,5 +1,4 @@
 import { MotionValue, motion, AnimatePresence } from "framer-motion";
-
 import { useState, useEffect } from "react";
 import styles from "./AboutMe.module.scss";
 
@@ -13,10 +12,10 @@ const AboutMe = ({
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight * 7;
+      const windowHeight = window.innerHeight * 8;
       const scrollProgress = scrollY / windowHeight;
 
-      if (scrollProgress >= 0.25 && scrollProgress <= 0.5) {
+      if (scrollProgress >= 0.25 && scrollProgress < 0.5) {
         setIsDisplayed(true);
       } else {
         setIsDisplayed(false);

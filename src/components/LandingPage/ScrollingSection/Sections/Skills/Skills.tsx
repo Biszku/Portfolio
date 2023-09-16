@@ -12,7 +12,7 @@ const Skills = ({
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight * 7;
+      const windowHeight = window.innerHeight * 8;
       const scrollProgress = scrollY / windowHeight;
 
       if (scrollProgress >= 0.75) {

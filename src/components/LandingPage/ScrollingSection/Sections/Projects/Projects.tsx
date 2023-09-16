@@ -12,10 +12,10 @@ const Projects = ({
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight * 7;
+      const windowHeight = window.innerHeight * 8;
       const scrollProgress = scrollY / windowHeight;
 
-      if (scrollProgress >= 0.5 && scrollProgress <= 0.75) {
+      if (scrollProgress >= 0.5 && scrollProgress < 0.75) {
         setIsDisplayed(true);
       } else {
         setIsDisplayed(false);
