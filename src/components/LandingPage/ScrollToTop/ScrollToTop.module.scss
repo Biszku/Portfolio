@@ -1,0 +1,13 @@
+.container {
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+  border: 0.4rem solid rgb(19, 19, 19);
+  border-radius: 50%;
+  padding: 1.4rem;
+  cursor: pointer;
+  &_rocket {
+    font-size: 6.4rem;
+    background-clip: text;
+  }
+}
