@@ -11,7 +11,7 @@ const Welcome = ({
   scrollProgress: MotionValue<number>;
 }) => {
   const [isDisplayed, textElementVisibility, isVisibleNavigation] =
-    useScrollingElementsVisibility(-1, 0.25);
+    useScrollingElementsVisibility(-1, 0.25, true);
 
   return (
     <AnimatePresence>

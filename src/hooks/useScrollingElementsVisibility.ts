@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 
-const useScrollingElementsVisibility = (min: number, max: number) => {
-  const [isDisplayed, setIsDisplayed] = useState(true);
+const useScrollingElementsVisibility = (
+  min: number,
+  max: number,
+  firstSection: boolean = false
+) => {
+  const [isDisplayed, setIsDisplayed] = useState(firstSection);
   const [textElementVisibility, setTextElementVisibility] = useState(false);
   const [isVisibleNavigation, setIsVisibleNavigation] = useState(false);
 
