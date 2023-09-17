@@ -1,47 +1,17 @@
 import { MotionValue, motion, AnimatePresence } from "framer-motion";
-import React, { useEffect, useState } from "react";
+
 import styles from "./Welcome.module.scss";
 import Image from "next/image";
 import ScrollingToElement from "@/src/utils/scrolling";
+import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
 
 const Welcome = ({
   scrollProgress,
 }: {
   scrollProgress: MotionValue<number>;
 }) => {
-  const [isDisplayed, setIsDisplayed] = useState(true);
-  const [textElementVisibility, setTextElementVisibility] = useState(false);
-  const [isVisibleNavigation, setIsVisibleNavigation] = useState(false);
-
-  useEffect(() => {
-    const textElementTimer = setTimeout(
-      () => setTextElementVisibility(true),
-      625
-    );
-    const navigationTimer = setTimeout(
-      () => setIsVisibleNavigation(true),
-      1000
-    );
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight * 8;
-      const scrollProgress = scrollY / windowHeight;
-
-      if (scrollProgress < 0.25) {
-        setIsDisplayed(true);
-      } else {
-        setIsDisplayed(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      clearTimeout(textElementTimer);
-      clearTimeout(navigationTimer);
-    };
-  }, []);
+  const [isDisplayed, textElementVisibility, isVisibleNavigation] =
+    useScrollingElementsVisibility(-1, 0.25);
 
   return (
     <AnimatePresence>

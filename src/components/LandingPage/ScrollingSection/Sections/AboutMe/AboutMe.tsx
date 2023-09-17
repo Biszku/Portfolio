@@ -1,33 +1,20 @@
-import { MotionValue, motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import {
+  MotionValue,
+  motion,
+  AnimatePresence,
+  useTransform,
+} from "framer-motion";
 import styles from "./AboutMe.module.scss";
+import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
 
 const AboutMe = ({
   scrollProgress,
 }: {
   scrollProgress: MotionValue<number>;
 }) => {
-  const [isDisplayed, setIsDisplayed] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight * 8;
-      const scrollProgress = scrollY / windowHeight;
-
-      if (scrollProgress >= 0.25 && scrollProgress < 0.5) {
-        setIsDisplayed(true);
-      } else {
-        setIsDisplayed(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const [isDisplayed] = useScrollingElementsVisibility(0.25, 0.5);
+  const scale = useTransform(scrollProgress, [0.24, 0.5], [1, 10]);
+  const opacity = useTransform(scrollProgress, [0.24, 0.5], [1, 0]);
 
   return (
     <AnimatePresence>
@@ -41,6 +28,10 @@ const AboutMe = ({
           }}
           exit={{ opacity: 0, x: -600 }}
           className={styles.container}
+          style={{
+            scale: scale,
+            opacity: opacity,
+          }}
         >
           <p>About Me</p>
         </motion.article>

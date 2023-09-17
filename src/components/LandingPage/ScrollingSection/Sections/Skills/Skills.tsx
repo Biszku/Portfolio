@@ -1,33 +1,14 @@
 import { MotionValue, motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+
 import styles from "./Skills.module.scss";
+import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
 
 const Skills = ({
   scrollProgress,
 }: {
   scrollProgress: MotionValue<number>;
 }) => {
-  const [isDisplayed, setIsDisplayed] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight * 8;
-      const scrollProgress = scrollY / windowHeight;
-
-      if (scrollProgress >= 0.75) {
-        setIsDisplayed(true);
-      } else {
-        setIsDisplayed(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const [isDisplayed] = useScrollingElementsVisibility(0.75, 1);
 
   return (
     <AnimatePresence>
