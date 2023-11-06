@@ -1,5 +1,4 @@
 import { MotionValue, motion, AnimatePresence } from "framer-motion";
-
 import styles from "./Welcome.module.scss";
 import Image from "next/image";
 import ScrollingToElement from "@/src/utils/scrolling";
@@ -11,7 +10,7 @@ const Welcome = ({
   scrollProgress: MotionValue<number>;
 }) => {
   const [isDisplayed, textElementVisibility, isVisibleNavigation] =
-    useScrollingElementsVisibility(-1, 0.25, true);
+    useScrollingElementsVisibility(0, 0.25, true);
 
   return (
     <AnimatePresence>

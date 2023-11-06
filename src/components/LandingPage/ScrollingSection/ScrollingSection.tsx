@@ -1,4 +1,4 @@
-
+"use client";
 import styles from "./ScrollingSection.module.scss";
 import { useRef } from "react";
 import { useScroll } from "framer-motion";

@@ -13,9 +13,6 @@ const AboutMe = ({
   scrollProgress: MotionValue<number>;
 }) => {
   const [isDisplayed] = useScrollingElementsVisibility(0.25, 0.5);
-  const scale = useTransform(scrollProgress, [0.24, 0.5], [1, 10]);
-  const opacity = useTransform(scrollProgress, [0.24, 0.5], [1, 0]);
-
   return (
     <AnimatePresence>
       {isDisplayed && (
@@ -28,10 +25,6 @@ const AboutMe = ({
           }}
           exit={{ opacity: 0, x: -600 }}
           className={styles.container}
-          style={{
-            scale: scale,
-            opacity: opacity,
-          }}
         >
           <p>About Me</p>
         </motion.article>
