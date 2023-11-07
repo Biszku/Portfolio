@@ -8,7 +8,7 @@ const Skills = ({
 }: {
   scrollProgress: MotionValue<number>;
 }) => {
-  const isDisplayed = useScrollingElementsVisibility(0.75, 1);
+  const isDisplayed = useScrollingElementsVisibility(0.75, 2);
 
   return (
     <AnimatePresence>

@@ -1,9 +1,4 @@
-import {
-  MotionValue,
-  motion,
-  AnimatePresence,
-  useTransform,
-} from "framer-motion";
+import { MotionValue, motion, AnimatePresence } from "framer-motion";
 import styles from "./AboutMe.module.scss";
 import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
 
@@ -13,6 +8,7 @@ const AboutMe = ({
   scrollProgress: MotionValue<number>;
 }) => {
   const isDisplayed = useScrollingElementsVisibility(0.25, 0.5);
+
   return (
     <AnimatePresence>
       {isDisplayed && (

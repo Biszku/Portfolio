@@ -10,6 +10,7 @@ import Skills from "./Sections/Skills/Skills";
 const ScrollingSection = () => {
   const SectionsContainer = useRef(null);
   const { scrollYProgress } = useScroll({ target: SectionsContainer });
+
   return (
     <section ref={SectionsContainer} className={styles.container}>
       {[Welcome, AboutMe, Projects, Skills].map((Component, index) => (
