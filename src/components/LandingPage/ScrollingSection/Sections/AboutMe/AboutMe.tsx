@@ -12,7 +12,7 @@ const AboutMe = ({
 }: {
   scrollProgress: MotionValue<number>;
 }) => {
-  const [isDisplayed] = useScrollingElementsVisibility(0.25, 0.5);
+  const isDisplayed = useScrollingElementsVisibility(0.25, 0.5);
   return (
     <AnimatePresence>
       {isDisplayed && (

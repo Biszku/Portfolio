@@ -8,7 +8,7 @@ const Projects = ({
 }: {
   scrollProgress: MotionValue<number>;
 }) => {
-  const [isDisplayed] = useScrollingElementsVisibility(0.5, 0.75);
+  const isDisplayed = useScrollingElementsVisibility(0.5, 0.75);
 
   return (
     <AnimatePresence>

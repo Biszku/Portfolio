@@ -6,18 +6,8 @@ const useScrollingElementsVisibility = (
   firstSection: boolean = false
 ) => {
   const [isDisplayed, setIsDisplayed] = useState(firstSection);
-  // const [textElementVisibility, setTextElementVisibility] = useState(false);
-  // const [isVisibleNavigation, setIsVisibleNavigation] = useState(false);
 
   useEffect(() => {
-    // const textElementTimer = setTimeout(
-    //   () => setTextElementVisibility(true),
-    //   625
-    // );
-    // const navigationTimer = setTimeout(
-    //   () => setIsVisibleNavigation(true),
-    //   1000
-    // );
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight * 8;
@@ -34,16 +24,10 @@ const useScrollingElementsVisibility = (
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      // clearTimeout(textElementTimer);
-      // clearTimeout(navigationTimer);
-      setIsDisplayed(false);
     };
-  }, [min, max]);
+  }, [min, max, firstSection]);
 
-  return [
-    isDisplayed,
-    // , textElementVisibility, isVisibleNavigation
-  ];
+  return isDisplayed;
 };
 
 export default useScrollingElementsVisibility;

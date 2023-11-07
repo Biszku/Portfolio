@@ -3,14 +3,33 @@ import styles from "./Welcome.module.scss";
 import Image from "next/image";
 import ScrollingToElement from "@/src/utils/scrolling";
 import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
+import { useState, useEffect } from "react";
 
 const Welcome = ({
   scrollProgress,
 }: {
   scrollProgress: MotionValue<number>;
 }) => {
-  const [isDisplayed, textElementVisibility, isVisibleNavigation] =
-    useScrollingElementsVisibility(0, 0.25, true);
+  const isDisplayed = useScrollingElementsVisibility(0, 0.25, true);
+  const [textElementVisibility, setTextElementVisibility] = useState(false);
+  const [isVisibleNavigation, setIsVisibleNavigation] = useState(false);
+
+  useEffect(() => {
+    const textElementTimer = setTimeout(
+      () => setTextElementVisibility(true),
+      625
+    );
+
+    const navigationTimer = setTimeout(
+      () => setIsVisibleNavigation(true),
+      1000
+    );
+
+    return () => {
+      clearTimeout(textElementTimer);
+      clearTimeout(navigationTimer);
+    };
+  }, []);
 
   return (
     <AnimatePresence>
