@@ -3,11 +3,7 @@ import { MotionValue, motion, AnimatePresence } from "framer-motion";
 import styles from "./Skills.module.scss";
 import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
 
-const Skills = ({
-  scrollProgress,
-}: {
-  scrollProgress: MotionValue<number>;
-}) => {
+const Skills = () => {
   const isDisplayed = useScrollingElementsVisibility(0.75, 2);
 
   return (
@@ -15,7 +11,7 @@ const Skills = ({
       {isDisplayed && (
         <motion.article
           initial={{ opacity: 0, x: 600 }}
-          animate={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
           exit={{ opacity: 0, x: -600 }}
           className={styles.container}
         >

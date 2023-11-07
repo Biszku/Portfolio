@@ -10,9 +10,8 @@ const useScrollingElementsVisibility = (
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight * 7;
+      const windowHeight = window.innerHeight * 8;
       const scrollProgress = scrollY / windowHeight;
-      console.log(scrollProgress);
 
       if (scrollProgress >= min && scrollProgress < max) {
         setIsDisplayed(true);

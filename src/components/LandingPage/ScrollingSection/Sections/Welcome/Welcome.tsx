@@ -5,11 +5,7 @@ import ScrollingToElement from "@/src/utils/scrolling";
 import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
 import { useState, useEffect } from "react";
 
-const Welcome = ({
-  scrollProgress,
-}: {
-  scrollProgress: MotionValue<number>;
-}) => {
+const Welcome = () => {
   const isDisplayed = useScrollingElementsVisibility(0, 0.25, true);
   const [textElementVisibility, setTextElementVisibility] = useState(false);
   const [isVisibleNavigation, setIsVisibleNavigation] = useState(false);
@@ -36,7 +32,7 @@ const Welcome = ({
       {isDisplayed && (
         <motion.div
           initial={{ opacity: 0, y: -200 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0, transition: { delay: 0.3 } }}
           exit={{ opacity: 0, x: -600 }}
           className={styles.container}
         >

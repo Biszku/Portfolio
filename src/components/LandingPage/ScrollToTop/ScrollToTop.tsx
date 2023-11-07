@@ -13,10 +13,10 @@ const ScrollToTop = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
+      console.log(scrollY, window.innerHeight);
       if (scrollY >= window.innerHeight * 2) {
         setIsScrollingRocketVisible(true);
       } else {
-        console.log("unvisible");
         setIsScrollingRocketVisible(false);
       }
     };
