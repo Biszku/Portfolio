@@ -1,0 +1,27 @@
+.content {
+  margin: 2rem 1rem;
+  border: 0.3rem solid #535353;
+  border-radius: 0.8rem;
+  &:last-child {
+    margin-right: 2rem;
+  }
+}
+
+.header {
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-size: 3.6rem;
+  border-bottom: 0.3rem solid #535353;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 4rem;
+  gap: 1rem;
+  list-style: disc;
+
+  & li {
+    text-transform: capitalize;
+  }
+}
