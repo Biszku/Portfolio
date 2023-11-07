@@ -43,8 +43,8 @@ const Welcome = ({
           <motion.article layout className={styles.container_avatar}>
             <Image
               src="/avatar.jpg"
-              width={300}
-              height={300}
+              width={600}
+              height={600}
               alt="Biszku's avatar"
               className={styles.container_avatar_avatar}
             />
