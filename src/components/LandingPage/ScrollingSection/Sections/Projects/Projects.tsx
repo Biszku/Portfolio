@@ -3,7 +3,7 @@ import { MotionValue, motion, AnimatePresence } from "framer-motion";
 import styles from "./Projects.module.scss";
 import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
 
-const Projects = () => {
+const Projects = ({scrollProgress}:{scrollProgress: MotionValue<number>}) => {
   const isDisplayed = useScrollingElementsVisibility(0.5, 0.75);
 
   return (

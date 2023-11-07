@@ -5,7 +5,11 @@ import ScrollingToElement from "@/src/utils/scrolling";
 import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
 import { useState, useEffect } from "react";
 
-const Welcome = () => {
+const Welcome = ({
+  scrollProgress,
+}: {
+  scrollProgress: MotionValue<number>;
+}) => {
   const isDisplayed = useScrollingElementsVisibility(0, 0.25, true);
   const [textElementVisibility, setTextElementVisibility] = useState(false);
   const [isVisibleNavigation, setIsVisibleNavigation] = useState(false);
