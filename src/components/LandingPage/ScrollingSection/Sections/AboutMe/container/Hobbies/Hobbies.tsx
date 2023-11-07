@@ -1,8 +1,13 @@
+import Card from "../../../../../Card/Card";
+
 const Hobbies = () => {
   return (
-    <div>
-      <h1>Hobbies</h1>
-    </div>
+    <Card header="Hobbies">
+      <li>programming</li>
+      <li>computer games</li>
+      <li>listening music</li>
+      <li>playing chess</li>
+    </Card>
   );
 };
 
