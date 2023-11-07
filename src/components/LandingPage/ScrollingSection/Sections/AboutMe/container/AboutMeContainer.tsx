@@ -20,7 +20,7 @@ const AboutMeSection = ({ display }: { display: boolean }) => {
         >
           <div className={styles.container}>
             <div className={styles.headerContainer}>
-              <h1>About Me</h1>
+              <h2>About Me</h2>
             </div>
             <AboutMeContent />
             <Hobbies />
