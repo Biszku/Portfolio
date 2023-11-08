@@ -24,8 +24,8 @@ const Card = ({
       <div className={styles.imageContainer}>
         <Image
           src={info.image}
-          height={info.resolution.height}
-          width={info.resolution.width}
+          height={info.resolution.height / 2}
+          width={info.resolution.width / 2}
           alt={info.alt}
           className={styles.image}
         />
