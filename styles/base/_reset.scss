@@ -16,6 +16,7 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
   color: rgb(19, 19, 19);
+  // background-image: linear-gradient(#4b4b4b, #3f3f3f);
   font-family: "Poppins", sans-serif;
 
   &::-webkit-scrollbar {
@@ -41,4 +42,5 @@ ol {
 a {
   color: inherit;
   text-decoration: none;
+  display: inline-block;
 }
