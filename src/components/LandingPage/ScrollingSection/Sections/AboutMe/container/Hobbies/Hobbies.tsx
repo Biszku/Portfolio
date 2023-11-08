@@ -1,14 +1,13 @@
-import Card from "../../../../../Card/Card";
+import Card from "../Card/Card";
 
 const Hobbies = () => {
-  return (
-    <Card header="Hobbies">
-      <li>programming</li>
-      <li>computer games</li>
-      <li>listening music</li>
-      <li>playing chess</li>
-    </Card>
-  );
+  const hobbyList = [
+    "programming",
+    "computer games",
+    "listening music",
+    "playing chess",
+  ];
+  return <Card header="Hobbies" list={hobbyList} />;
 };
 
 export default Hobbies;

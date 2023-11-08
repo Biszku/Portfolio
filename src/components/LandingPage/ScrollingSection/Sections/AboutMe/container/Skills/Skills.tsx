@@ -1,19 +1,16 @@
-import Card from "../../../../../Card/Card";
+import Card from "../Card/Card";
 
 const Skills = () => {
-  return (
-    <Card header="Skills">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Sass</li>
-      <li>JavaScript</li>
-      <li>TypeScript</li>
-      <li>React.js</li>
-      <li>Redux</li>
-      <li>Next.js</li>
-      <li>Git</li>
-    </Card>
-  );
+  const skillList = [
+    "Problem-solving",
+    "Work under stress",
+    "Analytical thinking",
+    "Communication",
+    "Teamwork",
+    "Interpersonal Skills",
+    "Time Management",
+  ];
+  return <Card header="Soft Skills" list={skillList} />;
 };
 
 export default Skills;
