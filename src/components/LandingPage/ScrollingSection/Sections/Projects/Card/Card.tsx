@@ -2,6 +2,8 @@ import Image from "next/image";
 import styles from "./Card.module.scss";
 import { HiChevronRight } from "react-icons/hi";
 import { motion } from "framer-motion";
+import { IoLogoGithub } from "react-icons/io5";
+
 const Card = ({
   info,
 }: {
@@ -14,7 +16,10 @@ const Card = ({
     };
     alt: string;
     description: string;
-    technologies: string[];
+    technologies: {
+      name: string;
+      icon: any;
+    }[];
     linkToLiveVersion: string;
     linkToGithub: string;
   };
@@ -36,8 +41,8 @@ const Card = ({
         <ol className={styles.list}>
           {info.technologies.map((tech, index) => (
             <li key={index}>
-              <HiChevronRight />
-              {tech}
+              {tech.icon}
+              {tech.name}
             </li>
           ))}
         </ol>
@@ -48,6 +53,7 @@ const Card = ({
             href={info.linkToLiveVersion}
             className={styles.button}
           >
+            <div className={styles.dot}></div>
             Live Version
           </motion.a>
           <motion.a
@@ -57,6 +63,7 @@ const Card = ({
             className={styles.button}
           >
             GitHub
+            <IoLogoGithub className={styles.gitIcon} />
           </motion.a>
         </div>
       </div>
