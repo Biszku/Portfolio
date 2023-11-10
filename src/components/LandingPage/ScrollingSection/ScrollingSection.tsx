@@ -1,7 +1,7 @@
 "use client";
 import styles from "./ScrollingSection.module.scss";
 import { useRef } from "react";
-import { useScroll } from "framer-motion";
+import { AnimatePresence, useScroll } from "framer-motion";
 import Welcome from "./Sections/Welcome/Welcome";
 import AboutMe from "./Sections/AboutMe/AboutMe";
 import Projects from "./Sections/Projects/Projects";

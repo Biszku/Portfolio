@@ -1,11 +1,11 @@
 import Image from "next/image";
 import styles from "./Card.module.scss";
-import { HiChevronRight } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { IoLogoGithub } from "react-icons/io5";
 
 const Card = ({
   info,
+  numOfCard,
 }: {
   info: {
     name: string;
@@ -23,9 +23,30 @@ const Card = ({
     linkToLiveVersion: string;
     linkToGithub: string;
   };
+  numOfCard: number;
 }) => {
   return (
-    <div className={styles.container}>
+    <motion.div
+      initial={{ opacity: 0, x: 600 }}
+      animate={{
+        opacity: 1,
+        x: 0,
+        transition: {
+          delay: (numOfCard + 1) * 0.3,
+          type: "spring",
+          stiffness: 80,
+          damping: 10,
+        },
+      }}
+      exit={{
+        opacity: 0,
+        x: -600,
+        transition: {
+          type: "tween",
+        },
+      }}
+      className={styles.container}
+    >
       <div className={styles.imageContainer}>
         <Image
           src={info.image}
@@ -67,7 +88,7 @@ const Card = ({
           </motion.a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

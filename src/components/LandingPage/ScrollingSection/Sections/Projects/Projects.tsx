@@ -71,14 +71,9 @@ const Projects = ({
   return (
     <AnimatePresence>
       {isDisplayed && (
-        <motion.article
-          initial={{ opacity: 0, x: 600 }}
-          animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
-          exit={{ opacity: 0, x: -600 }}
-          className={styles.container}
-        >
+        <motion.article className={styles.container}>
           {projectsInfo.map((project, index) => (
-            <Card key={index} info={project} />
+            <Card key={index} info={project} numOfCard={index} />
           ))}
         </motion.article>
       )}
