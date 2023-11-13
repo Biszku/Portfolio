@@ -20,10 +20,7 @@ const Welcome = ({
       625
     );
 
-    const navigationTimer = setTimeout(
-      () => setIsVisibleNavigation(true),
-      2000
-    );
+    const navigationTimer = setTimeout(() => setIsVisibleNavigation(true), 900);
 
     return () => {
       clearTimeout(textElementTimer);
