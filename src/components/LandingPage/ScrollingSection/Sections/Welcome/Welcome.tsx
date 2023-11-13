@@ -22,7 +22,7 @@ const Welcome = ({
 
     const navigationTimer = setTimeout(
       () => setIsVisibleNavigation(true),
-      1000
+      2000
     );
 
     return () => {
