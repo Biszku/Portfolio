@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./Card.module.scss";
 import { motion } from "framer-motion";
 import { IoLogoGithub } from "react-icons/io5";
+import { HiOutlineExternalLink } from "react-icons/hi";
 
 const Card = ({
   info,
@@ -50,11 +51,12 @@ const Card = ({
       <div className={styles.imageContainer}>
         <Image
           src={info.image}
-          height={info.resolution.height / 2}
-          width={info.resolution.width / 2}
+          height={info.resolution.height}
+          width={info.resolution.width}
           alt={info.alt}
           className={styles.image}
         />
+        <div className={styles.glassEffect}></div>
       </div>
       <p className={styles.description}>{info.description}</p>
       <div className={styles.infoContainer}>
@@ -70,15 +72,7 @@ const Card = ({
         <div className={styles.buttonContainer}>
           <motion.a
             whileHover={{ scale: 1.05 }}
-            target="_blank"
-            href={info.linkToLiveVersion}
-            className={styles.button}
-          >
-            <div className={styles.dot}></div>
-            Live Version
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring" }}
             target="_blank"
             href={info.linkToGithub}
             className={styles.button}
@@ -87,6 +81,13 @@ const Card = ({
             <IoLogoGithub className={styles.gitIcon} />
           </motion.a>
         </div>
+        <a
+          href={info.linkToLiveVersion}
+          target="_blank"
+          className={styles.buttonToWebsite}
+        >
+          <HiOutlineExternalLink />
+        </a>
       </div>
     </motion.div>
   );
