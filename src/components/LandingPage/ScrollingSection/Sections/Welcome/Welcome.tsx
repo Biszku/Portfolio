@@ -4,6 +4,7 @@ import Image from "next/image";
 import ScrollingToElement from "@/src/utils/scrolling";
 import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
 import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 
 const Welcome = ({
   scrollProgress,
@@ -73,7 +74,7 @@ const Welcome = ({
                       {`I'm glad you visited my website. My name is Daniel and I
                     have been learning front end programming for a year.`}
                     </p>
-                    <p> Click on the links below to learn more about me</p>
+                    <p> Click on the links below to learn more about me.</p>
                   </div>
                   <ul className={styles.navigationBox}>
                     {["About me", "Projects", "Skills", "Contact"].map(
@@ -92,7 +93,7 @@ const Welcome = ({
                           }}
                           onClick={() => ScrollingToElement(index)}
                         >
-                          <span>{el}</span>
+                          <a href="#">{el}</a>
                         </motion.li>
                       )
                     )}
