@@ -2,4 +2,4 @@
 
 Live website
 
-Just click [**here**](https://biszku.vercel.app/)
+Just click [**here**](https://www.biszku.dev/)
