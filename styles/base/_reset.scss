@@ -34,6 +34,11 @@ body {
   }
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 ul,
 ol {
   list-style: none;
@@ -43,4 +48,8 @@ a {
   color: inherit;
   text-decoration: none;
   display: inline-block;
+
+  &:focus-visible {
+    outline: 0.4rem solid rgb(95, 94, 0);
+  }
 }
