@@ -11,7 +11,7 @@ const ContactSection = () => {
       </div>
       <div className={styles.box}>
         <GrMail />
-        <span>daniel.bivhuniak@gmail.com</span>
+        <span>contact@biszku.dev</span>
         <span>
           {"Icons by "}
           <a href="https://icons8.com/" target="_blank">
