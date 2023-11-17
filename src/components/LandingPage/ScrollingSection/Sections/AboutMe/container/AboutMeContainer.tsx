@@ -1,22 +1,33 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, animateValue } from "framer-motion";
 import styles from "./AboutMeContainer.module.scss";
 import AboutMeContent from "./Facts/AboutMeContent";
 import Hobbies from "./Hobbies/Hobbies";
 import Skills from "./Skills/Skills";
 
-const AboutMeSection = ({ display }: { display: boolean }) => {
+const AboutMeSection = ({
+  display,
+  animationState,
+  setExitAnimationState,
+}: {
+  display: boolean;
+  animationState: boolean;
+  setExitAnimationState: (state: boolean) => void;
+}) => {
+  // console.log(display, animationState);
   return (
     <AnimatePresence>
-      {display && (
+      {!animationState && display && (
         <motion.article
           initial={{ opacity: 0, y: 600 }}
           animate={{
             opacity: 1,
             y: 0,
-            transition: { delay: 0.3 },
           }}
           exit={{ opacity: 0, x: -600 }}
           className={styles.AboutMeSection}
+          onAnimationComplete={() => {
+            setExitAnimationState(false);
+          }}
         >
           <div className={styles.container}>
             <div className={styles.headerContainer}>

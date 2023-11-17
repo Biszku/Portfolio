@@ -2,6 +2,7 @@ import { MotionValue, motion, AnimatePresence } from "framer-motion";
 import styles from "./Projects.module.scss";
 import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
 import Card from "./Card/Card";
+import { useEffect } from "react";
 
 import {
   TypescriptIcon,
@@ -13,10 +14,18 @@ import {
 
 const Projects = ({
   scrollProgress,
+  exitAnimation,
+  setExitAnimation,
 }: {
   scrollProgress: MotionValue<number>;
+  exitAnimation: boolean;
+  setExitAnimation: (state: boolean) => void;
 }) => {
-  const isDisplayed = useScrollingElementsVisibility(0.5, 0.75);
+  const isDisplayed = useScrollingElementsVisibility(
+    0.5,
+    0.75,
+    setExitAnimation
+  );
   const projectsInfo = [
     {
       name: "Events Website",
@@ -69,8 +78,20 @@ const Projects = ({
 
   return (
     <AnimatePresence>
-      {isDisplayed && (
-        <motion.article className={styles.container}>
+      {isDisplayed && !exitAnimation && (
+        <motion.article
+          className={styles.container}
+          exit={{
+            opacity: 0,
+            x: -600,
+            transition: {
+              type: "tween",
+            },
+          }}
+          onAnimationComplete={() => {
+            setExitAnimation(false);
+          }}
+        >
           {projectsInfo.map((project, index) => (
             <Card key={index} info={project} numOfCard={index} />
           ))}

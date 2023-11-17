@@ -4,24 +4,32 @@ import Image from "next/image";
 import ScrollingToElement from "@/src/utils/scrolling";
 import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
 import { useState, useEffect } from "react";
-import { Link } from "react-scroll";
 
 const Welcome = ({
   scrollProgress,
+  exitAnimation,
+  setExitAnimation,
 }: {
   scrollProgress: MotionValue<number>;
+  exitAnimation: boolean;
+  setExitAnimation: (state: boolean) => void;
 }) => {
-  const isDisplayed = useScrollingElementsVisibility(0, 0.25, true);
+  const isDisplayed = useScrollingElementsVisibility(
+    0,
+    0.25,
+    setExitAnimation,
+    true
+  );
   const [textElementVisibility, setTextElementVisibility] = useState(false);
   const [isVisibleNavigation, setIsVisibleNavigation] = useState(false);
 
   useEffect(() => {
     const textElementTimer = setTimeout(
       () => setTextElementVisibility(true),
-      625
+      325
     );
 
-    const navigationTimer = setTimeout(() => setIsVisibleNavigation(true), 900);
+    const navigationTimer = setTimeout(() => setIsVisibleNavigation(true), 600);
 
     return () => {
       clearTimeout(textElementTimer);
@@ -29,14 +37,19 @@ const Welcome = ({
     };
   }, []);
 
+  console.log(isDisplayed, exitAnimation);
+
   return (
     <AnimatePresence>
-      {isDisplayed && (
+      {isDisplayed && !exitAnimation && (
         <motion.div
           initial={{ opacity: 0, y: -200 }}
-          animate={{ opacity: 1, y: 0, transition: { delay: 0.3 } }}
+          animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, x: -600 }}
           className={styles.container}
+          onAnimationComplete={() => {
+            setExitAnimation(false);
+          }}
         >
           <motion.article layout className={styles.container_avatar}>
             <Image

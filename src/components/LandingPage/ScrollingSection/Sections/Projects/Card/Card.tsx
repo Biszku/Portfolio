@@ -33,17 +33,10 @@ const Card = ({
         opacity: 1,
         x: 0,
         transition: {
-          delay: (numOfCard + 1) * 0.3,
+          delay: numOfCard * 0.3,
           type: "spring",
           stiffness: 80,
           damping: 10,
-        },
-      }}
-      exit={{
-        opacity: 0,
-        x: -600,
-        transition: {
-          type: "tween",
         },
       }}
       className={styles.container}
