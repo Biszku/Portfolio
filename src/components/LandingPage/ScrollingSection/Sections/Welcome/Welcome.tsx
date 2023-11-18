@@ -27,10 +27,10 @@ const Welcome = ({
   useEffect(() => {
     const textElementTimer = setTimeout(
       () => setTextElementVisibility(true),
-      325
+      625
     );
 
-    const navigationTimer = setTimeout(() => setIsVisibleNavigation(true), 600);
+    const navigationTimer = setTimeout(() => setIsVisibleNavigation(true), 900);
 
     return () => {
       clearTimeout(textElementTimer);
