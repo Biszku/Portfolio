@@ -84,9 +84,6 @@ const Projects = ({
           exit={{
             opacity: 0,
             x: -600,
-            transition: {
-              type: "tween",
-            },
           }}
           onAnimationComplete={() => {
             setExitAnimation(false);
