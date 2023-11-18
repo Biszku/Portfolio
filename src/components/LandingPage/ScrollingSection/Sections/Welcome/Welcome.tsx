@@ -4,6 +4,7 @@ import Image from "next/image";
 import ScrollingToElement from "@/src/utils/scrolling";
 import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
 import { useState, useEffect } from "react";
+import Wave from "../WaveAnimation/WaveAnimation";
 
 const Welcome = ({
   scrollProgress,
@@ -37,21 +38,35 @@ const Welcome = ({
     };
   }, []);
 
-  console.log(isDisplayed, exitAnimation);
-
   return (
     <AnimatePresence>
       {isDisplayed && !exitAnimation && (
         <motion.div
           initial={{ opacity: 0, y: -200 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, x: -600 }}
+          exit={{ opacity: 0, y: 600 }}
           className={styles.container}
           onAnimationComplete={() => {
             setExitAnimation(false);
           }}
         >
-          <motion.article layout className={styles.container_avatar}>
+          <motion.article
+            layout
+            className={styles.container_avatar}
+            animate={{
+              boxShadow: [
+                "none",
+                "0px 0px 68px 23px rgba(225, 201, 182, 0.33)",
+                "none",
+              ],
+              transition: {
+                repeat: Infinity,
+                duration: 2,
+                delay: 2,
+                repeatDelay: 5,
+              },
+            }}
+          >
             <Image
               src="/avatar.jpg"
               width={600}
@@ -94,16 +109,7 @@ const Welcome = ({
                       (el, index) => (
                         <motion.li
                           key={index}
-                          style={{
-                            fontSize: "3rem",
-                          }}
                           className={styles.navigationBox_item}
-                          transition={{ type: "spring" }}
-                          whileHover={{
-                            scale: 1.1,
-                            backgroundImage:
-                              "linear-gradient(to right bottom,rgb(17, 17, 131),rgb(121, 14, 14))",
-                          }}
                           onClick={() => ScrollingToElement(index)}
                         >
                           <a href="#">{el}</a>
@@ -115,6 +121,7 @@ const Welcome = ({
               )}
             </motion.article>
           )}
+          <Wave />
         </motion.div>
       )}
     </AnimatePresence>
