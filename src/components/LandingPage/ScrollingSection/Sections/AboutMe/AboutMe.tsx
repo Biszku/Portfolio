@@ -1,7 +1,6 @@
 import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
 import AboutMeSection from "./container/AboutMeContainer";
 import { MotionValue } from "framer-motion";
-import { useEffect } from "react";
 
 const AboutMe = ({
   scrollProgress,
