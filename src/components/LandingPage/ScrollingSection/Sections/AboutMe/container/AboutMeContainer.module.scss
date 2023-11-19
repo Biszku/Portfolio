@@ -27,3 +27,14 @@
   grid-column: 1/-1;
   border-bottom: 0.2rem solid #4b4b4b;
 }
+
+.divToRotateManipulation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 80%;
+  height: 80%;
+  cursor: grab;
+}
