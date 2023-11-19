@@ -3,6 +3,8 @@ import styles from "./AboutMeContainer.module.scss";
 import AboutMeContent from "./Facts/AboutMeContent";
 import Hobbies from "./Hobbies/Hobbies";
 import Skills from "./Skills/Skills";
+import { useState } from "react";
+import { MouseEvent } from "react";
 
 const AboutMeSection = ({
   display,
@@ -13,7 +15,17 @@ const AboutMeSection = ({
   animationState: boolean;
   setExitAnimationState: (state: boolean) => void;
 }) => {
-  // console.log(display, animationState);
+  const [grab, setGrab] = useState(false);
+  const [cords, setCords] = useState([0, 0]);
+
+  const hanbleRotation = (
+    e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>
+  ) => {
+    if (grab) {
+      setCords((prev) => [prev[0] + e.movementX, prev[1] + e.movementY]);
+    }
+  };
+
   return (
     <AnimatePresence>
       {!animationState && display && (
@@ -29,14 +41,33 @@ const AboutMeSection = ({
             setExitAnimationState(false);
           }}
         >
-          <div className={styles.container}>
+          <motion.div
+            className={styles.container}
+            style={{
+              rotateY: cords[0] / 4,
+              rotateX: cords[1] / 8,
+            }}
+          >
             <div className={styles.headerContainer}>
               <h2>About Me</h2>
             </div>
             <AboutMeContent />
             <Hobbies />
             <Skills />
-          </div>
+          </motion.div>
+          <div
+            className={styles.divToRotateManipulation}
+            onMouseDown={(e) => {
+              setGrab(true);
+            }}
+            onMouseUp={(e) => {
+              setGrab(false);
+            }}
+            onMouseLeave={() => setGrab(false)}
+            onMouseMove={(e) => {
+              hanbleRotation(e);
+            }}
+          ></div>
         </motion.article>
       )}
     </AnimatePresence>
