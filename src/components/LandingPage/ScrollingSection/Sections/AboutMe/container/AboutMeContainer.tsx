@@ -1,8 +1,6 @@
 import { motion, AnimatePresence, animateValue } from "framer-motion";
 import styles from "./AboutMeContainer.module.scss";
 import AboutMeContent from "./Facts/AboutMeContent";
-import Hobbies from "./Hobbies/Hobbies";
-import Skills from "./Skills/Skills";
 import { useState } from "react";
 import { MouseEvent } from "react";
 
@@ -52,15 +50,24 @@ const AboutMeSection = ({
               }}
             >
               <div className={styles.headerContainer}>
-                <h2>About Me</h2>
+                <h2>Front-End Developer</h2>
               </div>
               <AboutMeContent />
-              <Hobbies />
-              <Skills />
             </motion.div>
+
+            <motion.div
+              className={styles.backSide}
+              style={{
+                rotateY: cords[0] / 4 - 180,
+                rotateX: cords[1] / 8,
+              }}
+            ></motion.div>
           </motion.div>
           <div
             className={styles.divToRotateManipulation}
+            style={{
+              cursor: `${grab ? "grabbing" : "grab"}`,
+            }}
             onMouseDown={(e) => {
               setGrab(true);
             }}
