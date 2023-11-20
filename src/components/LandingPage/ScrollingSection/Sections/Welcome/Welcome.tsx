@@ -44,7 +44,7 @@ const Welcome = ({
         <motion.div
           initial={{ opacity: 0, y: -200 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 600 }}
+          exit={{ opacity: 0, y: -600 }}
           className={styles.container}
           onAnimationComplete={() => {
             setExitAnimation(false);
@@ -122,6 +122,7 @@ const Welcome = ({
             </motion.article>
           )}
           <Wave />
+          <motion.div className={styles.whiteFiller}></motion.div>
         </motion.div>
       )}
     </AnimatePresence>
