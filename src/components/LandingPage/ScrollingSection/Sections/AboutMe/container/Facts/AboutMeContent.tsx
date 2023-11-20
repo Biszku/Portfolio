@@ -13,6 +13,10 @@ const AboutMeContent = () => {
         className={styles.image}
       />
       <List />
+      <p className={styles.desc}>
+        I have been learning programming for a year. I am friedly and calm
+        person.
+      </p>
     </div>
   );
 };

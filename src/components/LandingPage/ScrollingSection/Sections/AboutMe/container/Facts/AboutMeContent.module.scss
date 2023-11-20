@@ -1,10 +1,19 @@
 .content {
-  padding: 2rem 0rem 0rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: 1fr auto;
+  column-gap: 5rem;
+  row-gap: 3rem;
 }
 
 .image {
-  border-radius: 50%;
+  border: 1rem solid rgb(136, 136, 136);
+  width: 100%;
+  height: auto;
+}
+
+.desc {
+  grid-column: 1/-1;
+  font-style: italic;
 }

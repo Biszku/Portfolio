@@ -15,10 +15,6 @@ const List = () => {
       <li>
         <span>Country</span>: Poland
       </li>
-      <li>
-        <span>Description</span>: I have been learning programming for a year. I
-        am friedly and calm person.
-      </li>
     </ol>
   );
 };
