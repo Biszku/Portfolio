@@ -43,7 +43,7 @@ const Welcome = ({
       {isDisplayed && !exitAnimation && (
         <motion.div
           initial={{ opacity: 0, y: -200 }}
-          animate={{ opacity: 1, y: 0, transition: { delay: 0.5 } }}
+          animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -600 }}
           className={styles.container}
           onAnimationComplete={() => {
@@ -100,7 +100,7 @@ const Welcome = ({
                   >
                     <p>
                       {`I'm glad you visited my website. My name is Daniel and I
-                    have been learning front end programming for a year.`}
+                    have been learning front-end programming for a year.`}
                     </p>
                     <p> Click on the links below to learn more about me.</p>
                   </div>
