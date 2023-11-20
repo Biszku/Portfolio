@@ -30,11 +30,6 @@ const AboutMeSection = ({
     <AnimatePresence>
       {!animationState && display && (
         <motion.article
-          initial={{ opacity: 0, y: 600 }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
           exit={{ opacity: 0, x: -600 }}
           className={styles.AboutMeSection}
           onAnimationComplete={() => {
@@ -43,17 +38,26 @@ const AboutMeSection = ({
         >
           <motion.div
             className={styles.container}
-            style={{
-              rotateY: cords[0] / 4,
-              rotateX: cords[1] / 8,
+            initial={{ opacity: 0, y: 600 }}
+            animate={{
+              opacity: 1,
+              y: 0,
             }}
           >
-            <div className={styles.headerContainer}>
-              <h2>About Me</h2>
-            </div>
-            <AboutMeContent />
-            <Hobbies />
-            <Skills />
+            <motion.div
+              className={styles.frontSide}
+              style={{
+                rotateY: cords[0] / 4,
+                rotateX: cords[1] / 8,
+              }}
+            >
+              <div className={styles.headerContainer}>
+                <h2>About Me</h2>
+              </div>
+              <AboutMeContent />
+              <Hobbies />
+              <Skills />
+            </motion.div>
           </motion.div>
           <div
             className={styles.divToRotateManipulation}
