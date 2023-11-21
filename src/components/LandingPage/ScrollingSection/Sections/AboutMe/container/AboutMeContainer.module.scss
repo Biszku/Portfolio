@@ -67,4 +67,31 @@
   justify-content: space-between;
   padding: 2rem;
   flex: 1;
+  position: relative;
+  z-index: 1;
+
+  & svg {
+    position: absolute;
+    font-size: 40rem;
+    opacity: 0.08;
+    filter: grayscale(1);
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    &:nth-child(3) {
+      left: 50%;
+      top: 100%;
+      transform: translateY(-100%);
+    }
+
+    &:nth-child(4) {
+      transform: rotate(154deg);
+    }
+
+    &:nth-child(5) {
+      left: 100%;
+      transform: rotate(341deg);
+    }
+  }
 }

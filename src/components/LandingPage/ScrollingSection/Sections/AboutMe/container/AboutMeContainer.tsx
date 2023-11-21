@@ -5,6 +5,7 @@ import { useState } from "react";
 import { MouseEvent } from "react";
 import Hobbies from "./Hobbies/Hobbies";
 import Skills from "./Skills/Skills";
+import { CodingIcon, BulbIcon, ChessIcon } from "@/src/components/svgs";
 
 const AboutMeSection = ({
   display,
@@ -70,6 +71,9 @@ const AboutMeSection = ({
               <div className={styles.HobbiesAndSkillsBox}>
                 <Skills />
                 <Hobbies />
+                <CodingIcon />
+                <BulbIcon />
+                <ChessIcon />
               </div>
             </motion.div>
             <div
