@@ -1,8 +1,9 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
   & li {
+    color: white;
     text-transform: uppercase;
     font-size: 2.4rem;
   }
