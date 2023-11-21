@@ -3,6 +3,8 @@ import styles from "./AboutMeContainer.module.scss";
 import AboutMeContent from "./Facts/AboutMeContent";
 import { useState } from "react";
 import { MouseEvent } from "react";
+import Hobbies from "./Hobbies/Hobbies";
+import Skills from "./Skills/Skills";
 
 const AboutMeSection = ({
   display,
@@ -61,24 +63,32 @@ const AboutMeSection = ({
                 rotateY: cords[0] / 4 - 180,
                 rotateX: cords[1] / 8,
               }}
-            ></motion.div>
+            >
+              <div className={`${styles.headerContainer} ${styles.backHeader}`}>
+                <h2>Soft Skills & Hobbies</h2>
+              </div>
+              <div className={styles.HobbiesAndSkillsBox}>
+                <Skills />
+                <Hobbies />
+              </div>
+            </motion.div>
+            <div
+              className={styles.divToRotateManipulation}
+              style={{
+                cursor: `${grab ? "grabbing" : "grab"}`,
+              }}
+              onMouseDown={(e) => {
+                setGrab(true);
+              }}
+              onMouseUp={(e) => {
+                setGrab(false);
+              }}
+              onMouseLeave={() => setGrab(false)}
+              onMouseMove={(e) => {
+                hanbleRotation(e);
+              }}
+            ></div>
           </motion.div>
-          <div
-            className={styles.divToRotateManipulation}
-            style={{
-              cursor: `${grab ? "grabbing" : "grab"}`,
-            }}
-            onMouseDown={(e) => {
-              setGrab(true);
-            }}
-            onMouseUp={(e) => {
-              setGrab(false);
-            }}
-            onMouseLeave={() => setGrab(false)}
-            onMouseMove={(e) => {
-              hanbleRotation(e);
-            }}
-          ></div>
         </motion.article>
       )}
     </AnimatePresence>
