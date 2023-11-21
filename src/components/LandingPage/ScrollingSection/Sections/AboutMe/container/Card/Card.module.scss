@@ -1,30 +1,9 @@
-.content {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 1rem;
-  border: 0.3rem solid #535353;
-  border-radius: 0.8rem;
-  &:last-child {
-    margin-right: 2rem;
-  }
-}
-
-.header {
-  padding: 1rem 2rem;
-  font-weight: bold;
-  font-size: 3.6rem;
-  border-bottom: 0.3rem solid #535353;
-}
-
 .list {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  padding: 1rem;
-
+  gap: 2rem;
   & li {
-    text-transform: capitalize;
-    font-size: 2.8rem;
+    text-transform: uppercase;
+    font-size: 2.4rem;
   }
 }
