@@ -10,7 +10,7 @@ const Skills = () => {
     "Interpersonal Skills",
     "Time Management",
   ];
-  return <Card header="Soft Skills" list={skillList} />;
+  return <Card list={skillList} />;
 };
 
 export default Skills;
