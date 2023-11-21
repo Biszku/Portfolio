@@ -7,7 +7,7 @@ const Hobbies = () => {
     "listening music",
     "playing chess",
   ];
-  return <Card header="Hobbies" list={hobbyList} />;
+  return <Card list={hobbyList} />;
 };
 
 export default Hobbies;
