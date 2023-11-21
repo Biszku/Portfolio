@@ -5,6 +5,8 @@
   grid-template-rows: 1fr auto;
   column-gap: 5rem;
   row-gap: 3rem;
+  position: relative;
+  z-index: 1;
 }
 
 .image {
@@ -14,6 +16,17 @@
 }
 
 .desc {
+  position: relative;
   grid-column: 1/-1;
   font-style: italic;
+}
+
+.programmer {
+  position: absolute;
+  opacity: 0.25;
+  right: 2%;
+  top: 0;
+  z-index: -1;
+  height: 100%;
+  width: auto;
 }

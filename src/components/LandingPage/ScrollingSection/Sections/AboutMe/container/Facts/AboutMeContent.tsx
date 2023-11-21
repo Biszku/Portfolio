@@ -17,6 +17,13 @@ const AboutMeContent = () => {
         I have been learning programming for a year. I am friedly and calm
         person.
       </p>
+      <Image
+        src="/programmer.png"
+        width={450}
+        height={450}
+        alt="Programmer"
+        className={styles.programmer}
+      />
     </div>
   );
 };
