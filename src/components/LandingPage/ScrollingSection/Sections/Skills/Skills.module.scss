@@ -6,4 +6,24 @@
   display: grid;
   place-items: center;
   font-size: 2.8rem;
+  color: rgb(236, 236, 236);
+}
+
+.header {
+  text-align: center;
+  font-size: 6.4rem;
+}
+
+.skillsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+.skillsInnerContainer {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem 4rem;
+  border-radius: 100rem;
+  display: flex;
+  gap: 10rem;
 }
