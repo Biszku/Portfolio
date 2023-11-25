@@ -1,4 +1,6 @@
 export { default as TypescriptIcon } from "./typescript.svg";
+export { default as JavascriptIcon } from "./javascript.svg";
+export { default as HtmlIcon } from "./html.svg";
 export { default as SassIcon } from "./Sass.svg";
 export { default as ReactJsIcon } from "./ReactJs.svg";
 export { default as NextJsIcon } from "./NextJs.svg";
