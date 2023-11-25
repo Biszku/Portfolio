@@ -1,4 +1,4 @@
-import { motion, AnimatePresence, animateValue } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./AboutMeContainer.module.scss";
 import AboutMeContent from "./Facts/AboutMeContent";
 import { useState } from "react";
