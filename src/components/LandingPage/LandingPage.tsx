@@ -9,6 +9,14 @@ const LandingPage = () => {
       <ScrollingSection />
       <ContactSection />
       <ScrollToTop />
+      <footer className={styles.footer}>
+        <span>
+          {"Icons by "}
+          <a href="https://icons8.com/" target="_blank">
+            Icons8
+          </a>
+        </span>
+      </footer>
     </main>
   );
 };
