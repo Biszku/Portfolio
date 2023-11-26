@@ -22,6 +22,7 @@ const AboutMe = ({
       display={isDisplayed}
       animationState={exitAnimation}
       setExitAnimationState={setExitAnimation}
+      scrollProgress={scrollProgress}
     />
   );
 };

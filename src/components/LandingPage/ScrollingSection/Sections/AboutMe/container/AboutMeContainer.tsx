@@ -1,4 +1,9 @@
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  MotionValue,
+  useTransform,
+} from "framer-motion";
 import styles from "./AboutMeContainer.module.scss";
 import AboutMeContent from "./Facts/AboutMeContent";
 import { useState } from "react";
@@ -11,11 +16,16 @@ const AboutMeSection = ({
   display,
   animationState,
   setExitAnimationState,
+  scrollProgress,
 }: {
   display: boolean;
   animationState: boolean;
   setExitAnimationState: (state: boolean) => void;
+  scrollProgress: MotionValue<number>;
 }) => {
+  const scale = useTransform(scrollProgress, [0.36, 0.5], [1, 1.2]);
+  const opacity = useTransform(scrollProgress, [0.4, 0.5], [1, 0.8]);
+
   const [grab, setGrab] = useState(false);
   const [cords, setCords] = useState([0, 0]);
 
@@ -36,6 +46,7 @@ const AboutMeSection = ({
           onAnimationComplete={() => {
             setExitAnimationState(false);
           }}
+          style={{ scale, opacity }}
         >
           <motion.div
             className={styles.container}

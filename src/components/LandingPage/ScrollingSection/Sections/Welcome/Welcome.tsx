@@ -1,4 +1,9 @@
-import { MotionValue, motion, AnimatePresence } from "framer-motion";
+import {
+  MotionValue,
+  motion,
+  AnimatePresence,
+  useTransform,
+} from "framer-motion";
 import styles from "./Welcome.module.scss";
 import Image from "next/image";
 import ScrollingToElement from "@/src/utils/scrolling";
@@ -15,6 +20,8 @@ const Welcome = ({
   exitAnimation: boolean;
   setExitAnimation: (state: boolean) => void;
 }) => {
+  const ySlide = useTransform(scrollProgress, [0.15, 0.25], [0, -200]);
+
   const isDisplayed = useScrollingElementsVisibility(
     0,
     0.25,
@@ -42,6 +49,10 @@ const Welcome = ({
     <AnimatePresence>
       {isDisplayed && !exitAnimation && (
         <motion.div
+          style={{
+            y: ySlide,
+            // opacity,
+          }}
           initial={{ opacity: 0, y: -200 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -600 }}
