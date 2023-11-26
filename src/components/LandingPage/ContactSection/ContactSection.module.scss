@@ -4,6 +4,7 @@
   align-content: center;
   justify-content: center;
   font-size: 2.8rem;
+  gap: 4rem;
   flex-wrap: wrap;
   color: rgb(236, 236, 236);
 }
@@ -15,7 +16,11 @@
 }
 
 .box {
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 100rem;
+  border: 0.2rem solid black;
+  padding: 1rem 2rem;
 }
