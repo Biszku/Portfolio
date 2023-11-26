@@ -41,7 +41,7 @@ const AboutMeSection = ({
     <AnimatePresence>
       {!animationState && display && (
         <motion.article
-          exit={{ opacity: 0, x: -600 }}
+          exit={{ opacity: 0, scale: 2 }}
           className={styles.AboutMeSection}
           onAnimationComplete={() => {
             setExitAnimationState(false);
