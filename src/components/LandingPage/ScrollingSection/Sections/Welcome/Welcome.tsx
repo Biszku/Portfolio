@@ -96,7 +96,7 @@ const Welcome = ({
             >
               <motion.header layout className={styles.text_Content_HeaderBox}>
                 <h1 className={styles.text_Content_HeaderBox_Header}>
-                  Welcome to my website
+                  Front-end developer
                 </h1>
               </motion.header>
               {isVisibleNavigation && (
@@ -110,10 +110,11 @@ const Welcome = ({
                     className={styles.text_Content_introduction_text_content}
                   >
                     <p>
-                      {`I'm glad you visited my website. My name is Daniel and I
-                    have been learning front-end programming for a year.`}
+                      {`I am glad to welcome you to my website. My name is Daniel and I would like to invite you to get to know me and my projects.`}
                     </p>
-                    <p> Click on the links below to learn more about me.</p>
+                    <p>
+                      {`Just click on one of the buttons and jump into my world`}
+                    </p>
                   </div>
                   <ul className={styles.navigationBox}>
                     {["About me", "Projects", "Skills", "Contact"].map(

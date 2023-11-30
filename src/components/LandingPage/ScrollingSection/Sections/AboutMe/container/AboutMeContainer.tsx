@@ -64,7 +64,7 @@ const AboutMeSection = ({
               }}
             >
               <div className={styles.headerContainer}>
-                <h2>Front-End Developer</h2>
+                <h2>About Me</h2>
               </div>
               <AboutMeContent />
             </motion.div>
