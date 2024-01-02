@@ -5,8 +5,7 @@
   height: 100svh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 5rem;
+  justify-content: space-evenly;
   &_avatar {
     width: 30%;
     border-radius: 50%;
