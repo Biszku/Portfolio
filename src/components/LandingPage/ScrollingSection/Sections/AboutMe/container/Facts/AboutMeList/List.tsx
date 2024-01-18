@@ -7,7 +7,7 @@ const List = () => {
         <span>Name</span>: Daniel
       </li>
       <li>
-        <span>Age</span>: 19
+        <span>Age</span>: 20
       </li>
       <li>
         <span>Gender</span>: Programmer
