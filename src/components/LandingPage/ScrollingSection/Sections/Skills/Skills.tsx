@@ -9,6 +9,7 @@ import {
   NextJsIcon,
   CssIcon,
   HtmlIcon,
+  TailwindIcon,
 } from "@/src/components/svgs";
 import SkillBox from "./SkillBox/SkillBox";
 
@@ -26,6 +27,7 @@ const Skills = ({
     { name: "HTML", icon: <HtmlIcon /> },
     { name: "CSS", icon: <CssIcon /> },
     { name: "Sass", icon: <SassIcon /> },
+    { name: "Tailwind", icon: <TailwindIcon /> },
     { name: "JavaScript", icon: <JavascriptIcon /> },
     { name: "TypeScript", icon: <TypescriptIcon /> },
     { name: "React.js", icon: <ReactJsIcon /> },

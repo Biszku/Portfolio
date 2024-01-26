@@ -8,3 +8,4 @@ export { default as CssIcon } from "./Css.svg";
 export { default as CodingIcon } from "./coding.svg";
 export { default as BulbIcon } from "./bulb.svg";
 export { default as ChessIcon } from "./chess.svg";
+export { default as TailwindIcon } from "./tailwind.svg";
