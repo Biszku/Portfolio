@@ -10,6 +10,7 @@ import {
   CssIcon,
   HtmlIcon,
   TailwindIcon,
+  ReduxIcon,
 } from "@/src/components/svgs";
 import SkillBox from "./SkillBox/SkillBox";
 
@@ -31,6 +32,7 @@ const Skills = ({
     { name: "JavaScript", icon: <JavascriptIcon /> },
     { name: "TypeScript", icon: <TypescriptIcon /> },
     { name: "React.js", icon: <ReactJsIcon /> },
+    { name: "Redux", icon: <ReduxIcon /> },
     { name: "Next.js", icon: <NextJsIcon /> },
   ];
 

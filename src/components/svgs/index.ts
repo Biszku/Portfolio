@@ -9,3 +9,4 @@ export { default as CodingIcon } from "./coding.svg";
 export { default as BulbIcon } from "./bulb.svg";
 export { default as ChessIcon } from "./chess.svg";
 export { default as TailwindIcon } from "./tailwind.svg";
+export { default as ReduxIcon } from "./redux.svg";
