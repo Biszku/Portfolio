@@ -19,8 +19,8 @@ const AboutMeContent = () => {
       </p>
       <Image
         src="/programmer.png"
-        width={450}
-        height={450}
+        width={350}
+        height={350}
         alt="Programmer"
         className={styles.programmer}
       />
