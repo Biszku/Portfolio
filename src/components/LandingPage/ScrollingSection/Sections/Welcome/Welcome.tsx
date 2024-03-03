@@ -51,7 +51,6 @@ const Welcome = ({
         <motion.div
           style={{
             y: ySlide,
-            // opacity,
           }}
           initial={{ opacity: 0, y: -200 }}
           animate={{ opacity: 1, y: 0 }}
