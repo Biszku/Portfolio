@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  border: 0.4rem solid rgb(217, 217, 217);
+  border: 0.4rem solid rgb(190, 190, 190);
   border-radius: 50%;
   padding: 1.4rem;
   cursor: pointer;
@@ -10,6 +10,6 @@
   &_rocket {
     font-size: 6.4rem;
     background-clip: text;
-    color: rgb(212, 212, 212);
+    color: rgb(190, 190, 190);
   }
 }

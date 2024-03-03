@@ -1,13 +1,7 @@
-import {
-  MotionValue,
-  motion,
-  AnimatePresence,
-  useTransform,
-} from "framer-motion";
+import { MotionValue, motion, AnimatePresence } from "framer-motion";
 import styles from "./Projects.module.scss";
 import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
 import Card from "./Card/Card";
-import { useEffect } from "react";
 
 import {
   TypescriptIcon,
