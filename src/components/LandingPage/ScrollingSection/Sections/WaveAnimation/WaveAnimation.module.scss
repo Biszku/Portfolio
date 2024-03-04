@@ -3,7 +3,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 10rem;
+  height: 100px;
 }
 
 .wave {
@@ -13,7 +13,7 @@
   background: repeat-x url("/wave.png");
   width: 100%;
   height: 100%;
-  background-size: 100rem 10rem;
+  background-size: 1000px 100px;
 }
 
 .wave1 {
@@ -22,15 +22,14 @@
 
 .wave2 {
   animation: slideRight 10s infinite linear;
-
   opacity: 0.75;
-  top: -1rem;
+  top: -10px;
 }
 
 .wave3 {
   animation: slideLeft 20s infinite linear;
   opacity: 0.5;
-  top: -3rem;
+  top: -30px;
 }
 
 @keyframes slideRight {
@@ -38,7 +37,7 @@
     background-position-x: 0;
   }
   100% {
-    background-position-x: 100rem;
+    background-position-x: 1000px;
   }
 }
 
@@ -47,6 +46,6 @@
     background-position-x: 0;
   }
   100% {
-    background-position-x: -100rem;
+    background-position-x: -1000px;
   }
 }
