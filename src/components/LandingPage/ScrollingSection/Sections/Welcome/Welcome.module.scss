@@ -10,10 +10,6 @@
   column-gap: 5rem;
   place-content: center;
 
-  @media (max-width: 62em) {
-    // grid-template-columns: 50rem 55%;
-  }
-
   &_avatar {
     width: 100%;
     aspect-ratio: 1/1;

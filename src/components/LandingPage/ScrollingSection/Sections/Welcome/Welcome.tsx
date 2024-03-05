@@ -28,22 +28,6 @@ const Welcome = ({
     setExitAnimation,
     true
   );
-  const [textElementVisibility, setTextElementVisibility] = useState(false);
-  const [isVisibleNavigation, setIsVisibleNavigation] = useState(false);
-
-  useEffect(() => {
-    const textElementTimer = setTimeout(
-      () => setTextElementVisibility(true),
-      625
-    );
-
-    const navigationTimer = setTimeout(() => setIsVisibleNavigation(true), 900);
-
-    return () => {
-      clearTimeout(textElementTimer);
-      clearTimeout(navigationTimer);
-    };
-  }, []);
 
   return (
     <AnimatePresence>
@@ -86,48 +70,49 @@ const Welcome = ({
             />
           </motion.article>
 
-          {textElementVisibility && (
-            <motion.header
-              initial={{ opacity: 0, x: 600 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ type: "sping", duration: 0.5 }}
-              className={styles.text_Content_HeaderBox}
-            >
-              <h1 className={styles.text_Content_HeaderBox_Header}>
-                Front-end developer
-              </h1>
-            </motion.header>
-          )}
-          {isVisibleNavigation && (
-            <motion.div
-              transition={{ type: "spring", duration: 1, stiffness: 50 }}
-              initial={{ opacity: 0, x: 400 }}
-              animate={{ opacity: 1, x: 0 }}
-              className={styles.text_Content_introduction}
-            >
-              <div className={styles.text_Content_introduction_text_content}>
-                <p>
-                  {`I am glad to welcome you to my website. My name is Daniel and I would like to invite you to get to know me and my projects.`}
-                </p>
-                <p>
-                  {`Just click on one of the buttons and jump into my world`}
-                </p>
-              </div>
-              <ul className={styles.navigationBox}>
-                {["About me", "Projects", "Skills", "Contact"].map(
-                  (el, index) => (
-                    <motion.li
-                      key={index}
-                      className={styles.navigationBox_item}
-                      onClick={() => ScrollingToElement(index)}
-                    >
-                      <a href="#">{el}</a>
-                    </motion.li>
-                  )
-                )}
-              </ul>
-            </motion.div>
-          )}
+          <motion.header
+            initial={{ opacity: 0, x: 600 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ type: "tween", duration: 0.5 }}
+            className={styles.text_Content_HeaderBox}
+          >
+            <h1 className={styles.text_Content_HeaderBox_Header}>
+              Front-end developer
+            </h1>
+          </motion.header>
+
+          <motion.div
+            transition={{
+              type: "spring",
+              duration: 1,
+              stiffness: 50,
+              delay: 0.3,
+            }}
+            initial={{ opacity: 0, x: 400 }}
+            animate={{ opacity: 1, x: 0 }}
+            className={styles.text_Content_introduction}
+          >
+            <div className={styles.text_Content_introduction_text_content}>
+              <p>
+                {`I am glad to welcome you to my website. My name is Daniel and I would like to invite you to get to know me and my projects.`}
+              </p>
+              <p>{`Just click on one of the buttons and jump into my world`}</p>
+            </div>
+            <ul className={styles.navigationBox}>
+              {["About me", "Projects", "Skills", "Contact"].map(
+                (el, index) => (
+                  <motion.li
+                    key={index}
+                    className={styles.navigationBox_item}
+                    onClick={() => ScrollingToElement(index)}
+                  >
+                    <a href="#">{el}</a>
+                  </motion.li>
+                )
+              )}
+            </ul>
+          </motion.div>
+
           <Wave />
           <motion.div className={styles.whiteFiller}></motion.div>
         </motion.div>
