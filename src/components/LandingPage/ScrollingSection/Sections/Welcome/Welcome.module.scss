@@ -5,16 +5,25 @@
   height: 100svh;
 
   display: grid;
-  grid-template-columns: 66.5rem 1fr;
+  // grid-template-columns: 66.5rem 1fr;
+  grid-template-columns: 70svh 1fr;
   grid-template-rows: auto auto;
   column-gap: 5rem;
   place-content: center;
 
+  // @media (max-width: 102.125em) {
+  //   grid-template-columns: 61.5rem 1fr;
+  // }
+
+  // @media (max-width: 87em) {
+  //   grid-template-columns: 55rem 1fr;
+  // }
+
   &_avatar {
     width: 100%;
+    grid-row: 1/-1;
     aspect-ratio: 1/1;
     align-self: center;
-    grid-row: 1/-1;
     border-radius: 50%;
     overflow: hidden;
     margin-left: 2rem;
@@ -40,6 +49,14 @@
     &_Header {
       font-size: 6.4rem;
       text-transform: capitalize;
+
+      @media (max-width: 102.125em) {
+        font-size: 6.2rem;
+      }
+
+      @media (max-width: 87em) {
+        font-size: 5.6rem;
+      }
     }
   }
 
@@ -49,6 +66,10 @@
     gap: 5rem;
     padding-right: 5rem;
 
+    @media (max-width: 82.875em) {
+      padding-right: 1rem;
+    }
+
     &_text_content {
       padding: 0rem 0rem 0rem 2.5rem;
       display: flex;
@@ -57,11 +78,19 @@
       font-size: 2.6rem;
       line-height: 1.4;
 
+      @media (max-width: 102.125em) {
+        font-size: 2rem;
+      }
+
       & p:last-child {
         width: max-content;
         font-size: 2.2rem;
         border-bottom: 0.2rem solid black;
         padding-bottom: 0.2rem;
+
+        @media (max-width: 102.125em) {
+          font-size: 1.8rem;
+        }
       }
     }
   }
@@ -100,6 +129,14 @@
       background-color: transparent;
       padding: 1rem 0.2rem;
       font-size: 2.6rem;
+
+      @media (max-width: 102.125em) {
+        font-size: 2.2rem;
+      }
+
+      @media (max-width: 90.75em) {
+        padding: 1rem 1rem;
+      }
     }
   }
 }
