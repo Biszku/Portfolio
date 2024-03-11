@@ -5,19 +5,14 @@
   height: 100svh;
 
   display: grid;
-  // grid-template-columns: 66.5rem 1fr;
   grid-template-columns: 70svh 1fr;
   grid-template-rows: auto auto;
   column-gap: 5rem;
   place-content: center;
 
-  // @media (max-width: 102.125em) {
-  //   grid-template-columns: 61.5rem 1fr;
-  // }
-
-  // @media (max-width: 87em) {
-  //   grid-template-columns: 55rem 1fr;
-  // }
+  @media (max-width: 105.5625em) {
+    grid-template-columns: 60svh 1fr;
+  }
 
   &_avatar {
     width: 100%;
@@ -51,7 +46,7 @@
       text-transform: capitalize;
 
       @media (max-width: 102.125em) {
-        font-size: 6.2rem;
+        font-size: 6rem;
       }
 
       @media (max-width: 87em) {
@@ -78,19 +73,11 @@
       font-size: 2.6rem;
       line-height: 1.4;
 
-      @media (max-width: 102.125em) {
-        font-size: 2rem;
-      }
-
       & p:last-child {
         width: max-content;
         font-size: 2.2rem;
         border-bottom: 0.2rem solid black;
         padding-bottom: 0.2rem;
-
-        @media (max-width: 102.125em) {
-          font-size: 1.8rem;
-        }
       }
     }
   }
