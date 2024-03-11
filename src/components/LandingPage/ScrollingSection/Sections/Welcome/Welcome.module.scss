@@ -85,11 +85,11 @@
 
 .navigationBox {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 5rem;
 
   &_item {
-    flex: 1;
+    flex-basis: 20%;
     background-image: linear-gradient(
       120deg,
       black 0%,
@@ -119,10 +119,6 @@
 
       @media (max-width: 102.125em) {
         font-size: 2.2rem;
-      }
-
-      @media (max-width: 90.75em) {
-        padding: 1rem 1rem;
       }
     }
   }
