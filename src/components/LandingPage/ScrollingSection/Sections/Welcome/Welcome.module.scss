@@ -10,9 +10,9 @@
   column-gap: 5rem;
   place-content: center;
 
-  @media (max-width: 105.5625em) {
-    grid-template-columns: 60svh 1fr;
-  }
+  // @media (max-width: 105.5625em) {
+  //   grid-template-columns: 60svh 1fr;
+  // }
 
   &_avatar {
     width: 100%;
@@ -60,10 +60,6 @@
     flex-direction: column;
     gap: 5rem;
     padding-right: 5rem;
-
-    @media (max-width: 82.875em) {
-      padding-right: 1rem;
-    }
 
     &_text_content {
       padding: 0rem 0rem 0rem 2.5rem;
