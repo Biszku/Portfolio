@@ -52,6 +52,10 @@
       @media (max-width: 87em) {
         font-size: 5.6rem;
       }
+
+      @media (max-width: 83.6875em) {
+        font-size: 5.2rem;
+      }
     }
   }
 
@@ -69,11 +73,19 @@
       font-size: 2.6rem;
       line-height: 1.4;
 
+      @media (max-width: 83.6875em) {
+        font-size: 2.2rem;
+      }
+
       & p:last-child {
         width: max-content;
         font-size: 2.2rem;
         border-bottom: 0.2rem solid black;
         padding-bottom: 0.2rem;
+
+        @media (max-width: 83.6875em) {
+          font-size: 1.8rem;
+        }
       }
     }
   }
@@ -115,6 +127,10 @@
 
       @media (max-width: 102.125em) {
         font-size: 2.2rem;
+      }
+
+      @media (max-width: 83.6875em) {
+        font-size: 2rem;
       }
     }
   }
