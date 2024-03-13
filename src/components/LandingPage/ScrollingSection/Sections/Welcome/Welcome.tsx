@@ -86,7 +86,7 @@ const Welcome = ({
               type: "spring",
               duration: 1,
               stiffness: 50,
-              delay: 0.3,
+              delay: 0.2,
             }}
             initial={{ opacity: 0, x: 400 }}
             animate={{ opacity: 1, x: 0 }}
