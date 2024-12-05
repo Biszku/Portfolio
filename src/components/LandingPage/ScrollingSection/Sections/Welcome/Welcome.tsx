@@ -8,7 +8,6 @@ import styles from "./Welcome.module.scss";
 import Image from "next/image";
 import ScrollingToElement from "@/src/utils/scrolling";
 import useScrollingElementsVisibility from "@/src/hooks/useScrollingElementsVisibility";
-import { useState, useEffect } from "react";
 import Wave from "../WaveAnimation/WaveAnimation";
 
 const Welcome = ({
@@ -62,7 +61,7 @@ const Welcome = ({
             }}
           >
             <Image
-              src="/avatar.jpg"
+              src="/avatar.webp"
               width={600}
               height={600}
               alt="Biszku's avatar"

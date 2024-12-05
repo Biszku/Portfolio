@@ -2,4 +2,4 @@
 
 Live website
 
-Just click [**here**](https://www.biszku.dev/)
+Just click [**here https://www.biszku.com/**](https://www.biszku.com/)

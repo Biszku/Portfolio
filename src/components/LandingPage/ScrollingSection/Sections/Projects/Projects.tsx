@@ -28,7 +28,7 @@ const Projects = ({
   const projectsInfo = [
     {
       name: "Events Website",
-      image: "/events.PNG",
+      image: "/events.webp",
       resolution: {
         height: 991 / 3,
         width: 1904 / 3,
@@ -44,7 +44,7 @@ const Projects = ({
     },
     {
       name: "Quiz App",
-      image: "/quizio.PNG",
+      image: "/quizio.webp",
       resolution: {
         height: 811 * 2,
         width: 469 * 2,
@@ -62,7 +62,7 @@ const Projects = ({
     },
     {
       name: "Chess",
-      image: "/chess.PNG",
+      image: "/chess.webp",
       resolution: {
         height: 991 / 3,
         width: 1920 / 3,

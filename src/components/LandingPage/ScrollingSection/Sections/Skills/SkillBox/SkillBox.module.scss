@@ -4,13 +4,13 @@
   align-items: center;
   cursor: pointer;
   position: relative;
+
   & svg {
-    font-size: 8.4rem;
+    width: 8.4rem;
   }
 
   & p {
     font-size: 2.2rem;
-
     color: rgb(24, 24, 24);
   }
 }

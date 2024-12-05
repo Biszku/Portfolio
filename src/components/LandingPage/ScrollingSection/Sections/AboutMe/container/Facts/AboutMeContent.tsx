@@ -6,7 +6,7 @@ const AboutMeContent = () => {
   return (
     <div className={styles.content}>
       <Image
-        src="/avatar.jpg"
+        src="/avatar.webp"
         width={250}
         height={250}
         alt="My picture"
@@ -18,7 +18,7 @@ const AboutMeContent = () => {
         person.
       </p>
       <Image
-        src="/programmer.png"
+        src="/programmer.webp"
         width={350}
         height={350}
         alt="Programmer"

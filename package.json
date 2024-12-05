@@ -3,26 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@svgr/webpack": "^8.1.0",
-    "@types/node": "20.6.0",
-    "@types/react": "18.2.21",
-    "@types/react-dom": "18.2.7",
-    "@types/react-scroll": "^1.8.7",
-    "eslint": "8.49.0",
-    "eslint-config-next": "13.4.19",
-    "framer-motion": "^10.16.4",
-    "next": "^14.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.11.0",
-    "react-scroll": "^1.8.9",
-    "sass": "^1.66.1",
-    "typescript": "5.2.2"
-  }
+    "@svgr/webpack": "8.1.0",
+    "@types/node": "22.10.1",
+    "@types/react": "18.3.13",
+    "@types/react-dom": "18.3.1",
+    "@types/react-scroll": "1.8.10",
+    "framer-motion": "^11.13.1",
+    "next": "^15.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
+    "react-scroll": "^1.9.0",
+    "typescript": "5.7.2"
+  },
+  "devDependencies": {
+  "sass": "^1.82.0",
+  "sass-loader": "^13.0.0"
+}
 }
